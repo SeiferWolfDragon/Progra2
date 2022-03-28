@@ -1,0 +1,6 @@
+{
+	"ArchivoEntrada":"C:\\hombres.csv",
+	"ArchivoSalida":"archivo.sql",
+	"Tabla":"Estudiantes",
+	"Columnas":[0,3,5]	
+}
