@@ -1,6 +1,20 @@
 {
-	"ArchivoEntrada":"C:\hombres.csv",
+	"ArchivoEntrada":"C:\\INEGI_qro.csv",
 	"ArchivoSalida":"archivo.sql",
 	"Tabla":"Estudiantes",
-	"Columnas":[0,3,5]	
+	"Columnas":[
+		{"posicion":0, "tipo":"Entero"},
+		{"posicion":1, "tipo":"Cadena"},
+		{"posicion":3, "tipo":"Entero"},
+		{"posicion":4, "tipo":"Entero"},
+		{"posicion":5, "tipo":"Entero"},
+		{"posicion":6, "tipo":"Entero"},
+		{"posicion":7, "tipo":"Entero"},
+		{"posicion":8, "tipo":"Entero"},
+		{"posicion":9, "tipo":"Entero"},
+		{"posicion":10, "tipo":"Entero"},
+		{"posicion":11, "tipo":"Entero"},
+		{"posicion":12, "tipo":"Entero"},
+		{"posicion":13, "tipo":"Entero"},
+		{"posicion":14, "tipo":"Entero"}
 }
