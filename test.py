@@ -17,7 +17,8 @@ ArchivoEntrada=Conf['ArchivoEntrada']#lleva corchete porqu estamos en diccionari
 ArchivoSalida=Conf['ArchivoSalida']
 Tabla=Conf['Tabla']
 Columnas=Conf["Columnas"]
-print(len(Columnas)) #aqui dice que las columnas son 14
+print(Columnas) #aqui dice que las columnas son 14
+print(Conf['ArchivoEntrada'])
 
 
 #def numColumnas(fila,columnas):

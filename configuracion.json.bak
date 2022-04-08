@@ -17,4 +17,5 @@
 		{"posicion":12, "tipo":"Entero"},
 		{"posicion":13, "tipo":"Entero"},
 		{"posicion":14, "tipo":"Entero"}
+	]
 }
