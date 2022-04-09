@@ -1,5 +1,5 @@
 {
-	"ArchivoEntrada":"C:\\INEGI_qro.csv",
+	"ArchivoEntrada":"C:\\Users\\ghost\\OneDrive\\Documentos\\GitHubPrueba\\Proyecto-Git",
 	"ArchivoSalida":"archivo.sql",
 	"Tabla":"Estudiantes",
 	"Columnas":[
