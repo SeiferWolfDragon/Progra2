@@ -1,16 +1,17 @@
 import csv
 import json
 import time
-#import SQL
+import sqlite3
 
 from pathlib import Path
 Conf=None
-with open("configuracion_prueba.json") as jsonfile:
+with open("configuracion.json") as jsonfile:
     Conf=json.load(jsonfile)
 ArchivoEntrada=Conf['ArchivoEntrada']#lleva corchete porqu estamos en diccionario
 ArchivoSalida=Conf['ArchivoSalida']
 Tabla=Conf['Tabla']
 Columnas=Conf["Columnas"]
+
 
 
 
@@ -89,21 +90,12 @@ for i in range(0, len(Filas), 1):
        print(imprimir(i,j), end=' ')
     print()
 
-"""print(f"abriendo archivo: {ArchivoEntrada}...")
->>>>>>> 44bf780e41e80db529b8e34d4411a5e696402c59
-RutaArchivoEntrada = Path(ArchivoEntrada)
-if RutaArchivoEntrada.exists():
-    with RutaArchivoEntrada.open() as archivocsv:
-        print("Se ha Encontrado el archivo")
-        lectorCSV=csv.reader(archivocsv,delimiter=',')
-        for fila in lectorCSV:
-<<<<<<< HEAD
-            Columnas.append(fila)
-            print(Columnas)
-=======
-            print(fila)
-            contador+=1
->>>>>>> 44bf780e41e80db529b8e34d4411a5e696402c59
-else:
-    print("no pude abrir el archivo {}".format(ArchivoEntrada))
-print(contador)"""
+
+def EscrituraArchivo(destinocsv, columnas):####problema
+    escritordictSQL = sql.DictWriter(destinocsv, fieldnames=["columnas"], delimiter="|")
+    print(columnas)
+    escritordictSQL.writerow({"columnas": imprimir(i,j)})
+    
+
+destinocsv = open("Salida2.xml", 'w', newline="")
+EscrituraArchivo(destinocsv,Filas())
