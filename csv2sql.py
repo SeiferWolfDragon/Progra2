@@ -1,5 +1,6 @@
 import csv
 import json
+import io
 import time
 import sqlite3
 
@@ -85,17 +86,29 @@ dictArray()
 matriz=[]
 #print(Lista, type(Lista), len(Lista))
 crearFilas()
+cadenita="INSERT INTO "+Tabla+" VALUES ("
+destinocsv = open(ArchivoSalida, 'w', newline="")
+escritordictCSV = csv.writer(destinocsv)
 for i in range(0, len(Filas), 1):
+    cadenita = "INSERT INTO " + Tabla + " VALUES ("
     for j in range(0, len(Lista), 1):
-       print(imprimir(i,j), end=' ')
-    print()
+        if j==(len(Lista)-1):
+           #print(imprimir(i,j), end=' ')
+            cadenita=cadenita+str(imprimir(i,j))+");"
+        else:
+            cadenita=cadenita+str(imprimir(i,j))+","
+    escritordictCSV.writerow(cadenita)
+    print(cadenita)
 
 
-def EscrituraArchivo(destinocsv, columnas):####problema
+"""def EscrituraArchivo(destino):####problema
+    destinocsv = open(ArchivoSalida, 'w', newline="")
+    escritordictCSV = csv.DictWriter(destinocsv)
+    escritordictCSV.writerow(cadenita)
     escritordictSQL = sql.DictWriter(destinocsv, fieldnames=["columnas"], delimiter="|")
     print(columnas)
     escritordictSQL.writerow({"columnas": imprimir(i,j)})
     
 
-destinocsv = open("Salida2.xml", 'w', newline="")
-EscrituraArchivo(destinocsv,Filas())
+destinocsv = open(ArchivoSalida, 'w', newline="")
+EscrituraArchivo(destinocsv)"""
