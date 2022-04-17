@@ -1,6 +1,13 @@
 import csv
 import json
+<<<<<<< HEAD
 #import time
+=======
+import io
+import time
+import sqlite3
+
+>>>>>>> 06e92b10473e7d772f5becafd90e99cec7588420
 from pathlib import Path
 
 Conf=None
@@ -88,6 +95,7 @@ Filas = []
 dictArray()
 matriz=[Filas,Lista]
 crearFilas()
+<<<<<<< HEAD
 Colun1={}
 Colun2=[]
 with open('Salida.SQL','w',newline="") as file:
@@ -97,3 +105,31 @@ with open('Salida.SQL','w',newline="") as file:
             #print(imprimir(i,j))
             filewriter.writerows(str(imprimir(i,j)))
        
+=======
+cadenita="INSERT INTO "+Tabla+" VALUES ("
+destinocsv = open(ArchivoSalida, 'w', newline="")
+escritordictCSV = csv.writer(destinocsv)
+for i in range(0, len(Filas), 1):
+    cadenita = "INSERT INTO " + Tabla + " VALUES ("
+    for j in range(0, len(Lista), 1):
+        if j==(len(Lista)-1):
+           #print(imprimir(i,j), end=' ')
+            cadenita=cadenita+str(imprimir(i,j))+");"
+        else:
+            cadenita=cadenita+str(imprimir(i,j))+","
+    escritordictCSV.writerow(cadenita)
+    print(cadenita)
+
+
+"""def EscrituraArchivo(destino):####problema
+    destinocsv = open(ArchivoSalida, 'w', newline="")
+    escritordictCSV = csv.DictWriter(destinocsv)
+    escritordictCSV.writerow(cadenita)
+    escritordictSQL = sql.DictWriter(destinocsv, fieldnames=["columnas"], delimiter="|")
+    print(columnas)
+    escritordictSQL.writerow({"columnas": imprimir(i,j)})
+    
+
+destinocsv = open(ArchivoSalida, 'w', newline="")
+EscrituraArchivo(destinocsv)"""
+>>>>>>> 06e92b10473e7d772f5becafd90e99cec7588420
