@@ -98,13 +98,7 @@ crearFilas()
 <<<<<<< HEAD
 Colun1={}
 Colun2=[]
-with open('Salida.SQL','w',newline="") as file:
-    for i in range(0, len(Filas)):
-        for j in range(0, len(Lista)):
-            filewriter = csv.writer(file)
-            #print(imprimir(i,j))
-            filewriter.writerows(str(imprimir(i,j)))
-       
+
 =======
 cadenita="INSERT INTO "+Tabla+" VALUES ("
 destinocsv = open(ArchivoSalida, 'w', newline="")
