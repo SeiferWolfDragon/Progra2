@@ -1,9 +1,8 @@
 import csv
 import json
-import time
-import sqlite3
-
+#import time
 from pathlib import Path
+
 Conf=None
 with open("configuracion.json") as jsonfile:
     Conf=json.load(jsonfile)
@@ -47,6 +46,7 @@ def numFilas():
 def dictArray():
     for c in Columnas:
         Lista.append([c["posicion"], c["tipo"]])
+        #print(c)
 
 def crearFilas():
 
@@ -68,6 +68,7 @@ def convCadaInt(Cad):
         Cad = '0'
     return int(Cad)
 
+    
 def imprimir(a,b):
     dato = Lista[b][0]
     if (Lista[b][1] == "Entero"):
@@ -78,24 +79,21 @@ def imprimir(a,b):
         return '"' + str(Filas[a][dato].replace(",", "")) + '"'
 
 
+#print(Columnas)
+####COMO CREAR COLUMNAS EN PYTHON PARA CSV "BUSCAR INFORMACION"
+
 
 Lista=[]
 Filas = []
 dictArray()
-matriz=[]
-#print(Lista, type(Lista), len(Lista))
+matriz=[Filas,Lista]
 crearFilas()
-for i in range(0, len(Filas), 1):
-    for j in range(0, len(Lista), 1):
-       print(imprimir(i,j), end=' ')
-    print()
-
-
-def EscrituraArchivo(destinocsv, columnas):####problema
-    escritordictSQL = sql.DictWriter(destinocsv, fieldnames=["columnas"], delimiter="|")
-    print(columnas)
-    escritordictSQL.writerow({"columnas": imprimir(i,j)})
-    
-
-destinocsv = open("Salida2.xml", 'w', newline="")
-EscrituraArchivo(destinocsv,Filas())
+Colun1={}
+Colun2=[]
+with open('Salida.SQL','w',newline="") as file:
+    for i in range(0, len(Filas)):
+        for j in range(0, len(Lista)):
+            filewriter = csv.writer(file)
+            #print(imprimir(i,j))
+            filewriter.writerows(str(imprimir(i,j)))
+       
