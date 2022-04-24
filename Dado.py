@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-@author: Giovanni Jair Sánchez Chimal     
+Created on Wed Apr  6 17:26:31 2022
+
+@author: Giovanni Jair Sánchez Chimal
 """
 
 from kivy.app import App
 from kivy.uix.button import Button
-from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
-from kivy.graphics import Color, Rectangle
+from ColorLabel import ColorLabel
 import random
-
-
-def byte2Per(nbyte):
-	return nbyte*(1/255)
 
 class Dados(App):
     def btnaccion_press(self,obj):
@@ -20,9 +17,7 @@ class Dados(App):
         Dado1 = 0
         Dado1 = gen.randint(1,6)
         self.lblnumdado.text = str(Dado1)
-		#with self.lbltitulo.canvas:
-			#Color(byte2Per(34),0,byte2Per(159),1)
-			#Rectangle(pos=self.lbltitulo.pos, size=self.lbltitulo.size)
+		
 	# Este es el constructor
     def __init__(self,**kwargs):
 		# llamar al constructor de la clase base (App)
@@ -33,26 +28,24 @@ class Dados(App):
 		# Vamos a definir un layout
         gdl_principal = GridLayout(rows=3,cols=1)
 		############################################
-        lbltitulo = Label(text='Aplicacion Dado')
-        
-		# Cambiando el color de la etiqueta
-		#with lbltitulo.canvas:
-			#Color(byte2Per(34),0,byte2Per(159),1)
-			#Rectangle(pos=lbltitulo.pos, size=lbltitulo.size)
-        self.lbltitulo = lbltitulo
+        lbltitulo = self.label = ColorLabel(text='Aplicacion Dado')
+        self.label.background_color = [0.75,0,0,1]
 		############################################
         gdl_principal.add_widget(lbltitulo)
 		#Grid medio
         gdl_medio = GridLayout(cols=2)
-        lblresultado = Label(text='Resultado')
+        lblresultado = self.label = ColorLabel(text='Resultado:')
+        self.label.background_color = [0.9,0,0.80,1]
         gdl_medio.add_widget(lblresultado)
-        lblnumdado = Label(text="")
+        lblnumdado = self.label = ColorLabel(text='')
+        self.label.background_color = [1,0,1,1]
         gdl_medio.add_widget(lblnumdado)
         gdl_principal.add_widget(gdl_medio)
 		#Boton
         btnaccion = Button(text="Presionanme!!!")
         gdl_principal.add_widget(btnaccion)
         btnaccion.bind(on_press = self.btnaccion_press)
+       # btnaccion.bind(on_press=self.btn_press)
         self.gdl_principal = gdl_principal
         self.lblnumdado = lblnumdado
         return gdl_principal
