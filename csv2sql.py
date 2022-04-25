@@ -1,10 +1,15 @@
 import csv
 import json
+<<<<<<< HEAD
+#import time
+=======
 import io
 import time
 import sqlite3
 
+>>>>>>> 06e92b10473e7d772f5becafd90e99cec7588420
 from pathlib import Path
+
 Conf=None
 with open("configuracion.json") as jsonfile:
     Conf=json.load(jsonfile)
@@ -48,6 +53,7 @@ def numFilas():
 def dictArray():
     for c in Columnas:
         Lista.append([c["posicion"], c["tipo"]])
+        #print(c)
 
 def crearFilas():
 
@@ -69,6 +75,7 @@ def convCadaInt(Cad):
         Cad = '0'
     return int(Cad)
 
+    
 def imprimir(a,b):
     dato = Lista[b][0]
     if (Lista[b][1] == "Entero"):
@@ -79,13 +86,20 @@ def imprimir(a,b):
         return '"' + str(Filas[a][dato].replace(",", "")) + '"'
 
 
+#print(Columnas)
+####COMO CREAR COLUMNAS EN PYTHON PARA CSV "BUSCAR INFORMACION"
+
 
 Lista=[]
 Filas = []
 dictArray()
-matriz=[]
-#print(Lista, type(Lista), len(Lista))
+matriz=[Filas,Lista]
 crearFilas()
+<<<<<<< HEAD
+Colun1={}
+Colun2=[]
+
+=======
 cadenita="INSERT INTO "+Tabla+" VALUES ("
 destinocsv = open(ArchivoSalida, 'w', newline="")
 
@@ -114,3 +128,4 @@ destinocsv.close()
 
 destinocsv = open(ArchivoSalida, 'w', newline="")
 EscrituraArchivo(destinocsv)"""
+>>>>>>> 06e92b10473e7d772f5becafd90e99cec7588420
