@@ -1,0 +1,3 @@
+1.- tener un archivo.sql de creación
+2.- No usar root para las apps
+3.- No usar Mayusculas en nombres de tablas
