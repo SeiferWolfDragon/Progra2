@@ -1,0 +1,8 @@
+CREATE DATABASE Eje01;
+USE Eje01;
+CREATE TABLE "usuario"("id"  tinyint(3) AUTO_INCREMENT PRIMARY KEY,
+					"tipo" tinyint(2) NOT NULL,
+					"nick" varchar(128) NOT NULL,
+					"password" varchar(128) NOT NULL,
+					"registrado" datetime NOT NULL)ENGINE=InnoDB;
+					
