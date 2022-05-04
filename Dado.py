@@ -11,6 +11,10 @@ from kivy.uix.gridlayout import GridLayout
 from ColorLabel import ColorLabel
 import random
 
+def byte2Per(nbyte):
+	return nbyte*(1/255)
+
+
 class Dados(App):
     def btnaccion_press(self,obj):
         gen = random.Random()
@@ -29,7 +33,7 @@ class Dados(App):
         gdl_principal = GridLayout(rows=3,cols=1)
 		############################################
         lbltitulo = self.label = ColorLabel(text='Aplicacion Dado')
-        self.label.background_color = [0.75,0,0,1]
+        self.label.background_color = [byte2Per(255),byte2Per(150),byte2Per(170),1]
 		############################################
         gdl_principal.add_widget(lbltitulo)
 		#Grid medio
