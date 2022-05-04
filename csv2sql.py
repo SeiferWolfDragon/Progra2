@@ -101,7 +101,8 @@ Colun2=[]
 =======
 cadenita="INSERT INTO "+Tabla+" VALUES ("
 destinocsv = open(ArchivoSalida, 'w', newline="")
-escritordictCSV = csv.writer(destinocsv)
+
+###escritordictCSV = csv.writer(destinocsv)
 for i in range(0, len(Filas), 1):
     cadenita = "INSERT INTO " + Tabla + " VALUES ("
     for j in range(0, len(Lista), 1):
@@ -110,8 +111,9 @@ for i in range(0, len(Filas), 1):
             cadenita=cadenita+str(imprimir(i,j))+");"
         else:
             cadenita=cadenita+str(imprimir(i,j))+","
-    escritordictCSV.writerow(cadenita)
+    destinocsv.write(cadenita+"\n")
     print(cadenita)
+destinocsv.close()
 
 
 """def EscrituraArchivo(destino):####problema
