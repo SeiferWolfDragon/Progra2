@@ -97,8 +97,7 @@ matriz=[Filas,Lista]
 crearFilas()
 <<<<<<< HEAD
 Colun1={}
-Colun2=[]
-
+Colun2=[]       
 =======
 cadenita="INSERT INTO "+Tabla+" VALUES ("
 destinocsv = open(ArchivoSalida, 'w', newline="")
