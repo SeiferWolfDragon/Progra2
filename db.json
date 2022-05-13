@@ -1,0 +1,7 @@
+{
+	"HOST":"localhost",
+	"DBUSER":"usr_pyapps",
+	"DBPASS":"QGJPTp3Da6wTS5aU",
+	"DBNAME":"ejem01",
+	"PORT": 3306
+}
